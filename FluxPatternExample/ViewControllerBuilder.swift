@@ -21,7 +21,7 @@ class ViewControllerBuilder {
     }
 
     func makeShopSearvhViewController() -> ShopSearchViewController {
-        let vm = ShopSearchViewModel(store: shopSearchStore, actionCreator: shopSearchActionCreator)
+        let vm = ShopSearchViewModel(actionCreator: shopSearchActionCreator)
         let vc = UIStoryboard(name: "Main", bundle: nil)
             .instantiateViewController(withIdentifier: "ShopSearchViewController") as! ShopSearchViewController
         vc.vm = vm

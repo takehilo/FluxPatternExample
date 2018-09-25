@@ -12,13 +12,11 @@ class ShopSearchViewModel {
 
     private let disposeBag = DisposeBag()
 
-    private let store: ShopSearchStore
     private let actionCreator: ShopSearchActionCreator
 
     private let querySelectedStream = PublishSubject<String>()
 
-    init(store: ShopSearchStore, actionCreator: ShopSearchActionCreator) {
-        self.store = store
+    init(actionCreator: ShopSearchActionCreator) {
         self.actionCreator = actionCreator
 
         querySelectedStream.subscribe(onNext: { [unowned self] query in
